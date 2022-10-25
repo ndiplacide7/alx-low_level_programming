@@ -1,20 +1,22 @@
-#include "main.h"
+#include <stdio.h>
 /**
- * print_number - Prints a number
- * @n: The number to print
+ * main - prints the largest prime factor of the number 612852475143,
+ *fllowd by a new linees
+ * Return: Alwys 0 (Success)
  */
-void print_number(int n)
+int main(void)
 {
-	unsigned int num = n;
+	long int x = 612852475143;
+	long int py;
 
-	if (num < 0)
+	for (py = 2; py < x; py++)
 	{
-		putchar('-');
-		num = -num;
+		if (x % py == 0)
+		{
+		x = x / py;
+		}
 	}
-	if (num > 9)
-	{
-		print_number(num / 10);
-	}
-	putchar(num % 10 + '0');
+	printf("%ld\n", py);
+
+	return (0);
 }
